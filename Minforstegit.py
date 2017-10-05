@@ -1,3 +1,0 @@
-print("harald er teit")
-
-

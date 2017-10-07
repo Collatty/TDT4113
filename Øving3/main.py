@@ -1,9 +1,9 @@
-from Øving3 import Person
-from Øving3 import Cipher
+from Plab.Øving3 import Person
+from Plab.Øving3 import Cipher
 
 def main():
 
-    Kryptering = Cipher.Affine()
+    Kryptering = Cipher.Caesar()
     Håkon = Person.Sender(Kryptering)
     Toralf = Person.Receiver(Kryptering)
     Keil = Person.Hacker(Kryptering)

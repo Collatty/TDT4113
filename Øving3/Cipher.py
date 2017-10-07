@@ -1,5 +1,5 @@
-from Øving3 import Utility
-from Øving3 import Person
+from Plab.Øving3 import Utility
+from Plab.Øving3 import Person
 import random
 import math
 

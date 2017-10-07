@@ -1,4 +1,4 @@
-from Øving3 import Cipher
+from Plab.Øving3 import Cipher
 
 class Person:
 

@@ -45,7 +45,7 @@ class Reader:
             #words_in_positive.append(self.read_single_from_file("pos/"+file))
         for file in names:
             words_in_files.append(self.read_single_from_file(directory + file,3))
-        print("ferdig")
+        print("read multiple ferdig")
         return words_in_files #,words_in_positive
 
     def find_most_frequent(self, matrix_of_words):

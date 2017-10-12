@@ -46,14 +46,21 @@ class Classification():
         print ("time elapsed: {:.2f}s".format(time.time() - start_time))
 
     def percentage_of_correctness(self):
+        positive_filenames = set(os.listdir("/Users/macbookpro/Documents/Skole/Proglab2/Plab/Oving4/data/"+self.directory+"/test/pos/"))
+        negative_filenames= set(os.listdir("/Users/macbookpro/Documents/Skole/Proglab2/Plab/Oving4/data/"+self.directory+"/test/neg/"))
+        positive_reviews = set(self.positive_reviews)
+        negative_reviews = set(self.negative_reviews)
         correct = 0
+        correct+= len(positive_reviews.intersection(positive_filenames))
+        correct+= len(negative_reviews.intersection(negative_filenames))
+        """
         for name in self.positive_reviews:
             if name in os.listdir("/Users/macbookpro/Documents/Skole/Proglab2/Plab/Oving4/data/"+self.directory+"/test/pos/"):
                 correct+=1
         print ("percentage pos - time elapsed: {:.2f}s".format(time.time() - start_time))
         for name in self.negative_reviews:
             if name in os.listdir("/Users/macbookpro/Documents/Skole/Proglab2/Plab/Oving4/data/"+self.directory+"/test/neg/"):
-                correct +=1
+                correct +=1"""
         return correct/self.total_documents
 
 

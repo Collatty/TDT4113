@@ -26,8 +26,8 @@ class Cipher:
         Person2.set_melding(kodet_melding)
         dekodet_melding = self.decode(Person2)
         Person2.set_melding(dekodet_melding)
-        return "Verifiseringstesten gir deg resultatet:\n"+original_melding+"\n"+kodet_melding+"\n"+dekodet_melding+"\n"+str(original_melding == dekodet_melding) \
-            if isinstance(kodet_melding, str) else "Verifiseringstesten gir deg resutatet: "+str(original_melding ==dekodet_melding)
+        return "Verifiseringstesten gir deg resultatet:\n"+original_melding+"\n"+kodet_melding+"\n" + dekodet_melding + "\n" + str(original_melding == dekodet_melding) \
+            if isinstance(kodet_melding, str) else "Verifiseringstesten gir deg resutatet: " + str(original_melding == dekodet_melding)
 
 
 

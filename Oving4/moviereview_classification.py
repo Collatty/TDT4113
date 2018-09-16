@@ -18,6 +18,8 @@ class Classification():
         print (" training time - time elapsed: {:.2f}s".format(time.time() - start_time))
         self.positive_words = dict(self.positive_words)
         self.negative_words = dict(self.negative_words)
+        print(self.positive_words)
+        print(self.negative_words)
 
         print ("inititating time - time elapsed: {:.2f}s".format(time.time() - start_time))
 
@@ -52,7 +54,10 @@ class Classification():
         negative_reviews = set(self.negative_reviews)
         correct = 0
         correct+= len(positive_reviews.intersection(positive_filenames))
-        correct+= len(negative_reviews.intersection(negative_filenames))
+        print("pos"+str(correct/len(positive_filenames)))
+        print(len(negative_reviews)/len(negative_filenames))
+        neg = len(negative_reviews.intersection(negative_filenames))
+        print("neg" +str(neg/len(negative_filenames)))
         """
         for name in self.positive_reviews:
             if name in os.listdir("/Users/macbookpro/Documents/Skole/Proglab2/Plab/Oving4/data/"+self.directory+"/test/pos/"):
@@ -67,11 +72,12 @@ class Classification():
 
 def main():
     print ("Start time  - time elapsed: {:.2f}s".format(time.time() - start_time))
-    classifier = Classification("alle")
+    classifier = Classification("subset")
     classifier.multiple_classify("/test/pos/")
     print ("classifing time pos - time elapsed: {:.2f}s".format(time.time() - start_time))
     classifier.multiple_classify("/test/neg/")
     print ("classifying time neg -time elapsed: {:.2f}s".format(time.time() - start_time))
     print(classifier.percentage_of_correctness())
     print ("total time elapsed: {:.2f}s".format(time.time() - start_time))
+
 main()

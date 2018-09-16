@@ -15,7 +15,7 @@ class Reader:
     def read_single_from_file(self, filename, n_gram=None):
         if n_gram is None:
             unique_words = set()
-            for line in open("/Users/macbookpro/Documents/Skole/Proglab2/Plab/Oving4/data/" + filename):
+            for line in open("/Users/macbookpro/Documents/Skole/Proglab2/Plab/Oving4/data/" + filename, encoding='utf-8'):
                 words = line.split()
             for i in range(len(words)):
                 for chars in self.unwanted_chars:
@@ -25,7 +25,7 @@ class Reader:
         else:
             underscore = "_"
             unique_words = set()
-            for line in open("/Users/macbookpro/Documents/Skole/Proglab2/Plab/Oving4/data/" + filename):
+            for line in open("/Users/macbookpro/Documents/Skole/Proglab2/Plab/Oving4/data/" + filename, encoding='utf-8'):
                 words = line.split()
             for i in range(len(words)):
                 for chars in self.unwanted_chars:
@@ -60,7 +60,7 @@ class Reader:
             else:
                 dictionary_counted.update({word: 1})
         sorted_dict_counted = sorted(dictionary_counted.items(), key=operator.itemgetter(1))
-        sorted_dict_counted= self.remove_stop_words(sorted_dict_counted)
+        sorted_dict_counted = self.remove_stop_words(sorted_dict_counted)
         return sorted_dict_counted
 
     def remove_stop_words(self, sorted_dict_count):
